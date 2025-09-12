@@ -2,7 +2,7 @@ let progress = document.getElementById('progress'),
   navBar = document.getElementById('links'),
   timeOutFunctionId,
   isMobile = null,
-   data = null,
+  data = null,
   // windowWidth = null,
   currentPage = 1, // start on the first link
   linkCount = []; // array to store the <li> elements
@@ -38,7 +38,7 @@ function animateProgressBar(pos, link) {
 
 // Build navigation links
 function buildLinks() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < data.length; i++) {
     const liElement = document.createElement('li');
     liElement.innerHTML = `<a href="#">Link ${i + 1}</a>`;
 
@@ -68,14 +68,11 @@ function getWindowWidth() {
   window.innerWidth > 500 ? (isMobile = false) : (isMobile = true);
 }
 
-(async () => {
-  const { default: json } = await import('data.json', {
-    assert: { type: 'json' },
-  });
-  data = json.products;
-  console.log(data)
-
-})();
-
-getWindowWidth();
-buildLinks();
+fetch('./data.json')
+  .then((response) => response.json())
+  .then((d) => {
+    data = d;
+    getWindowWidth();
+    buildLinks();
+  })
+  .catch((error) => console.error('Error:', error));
