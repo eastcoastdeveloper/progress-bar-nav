@@ -69,7 +69,7 @@ function getWindowWidth() {
 }
 
 (async () => {
-  const { default: json } = await import('./data.json', {
+  const { default: json } = await import('data.json', {
     assert: { type: 'json' },
   });
   data = json.products;
