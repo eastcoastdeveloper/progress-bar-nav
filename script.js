@@ -8,9 +8,9 @@ let progress = document.getElementById('progress'),
   linkCount = []; // array to store the <li> elements
 
 // Initialize progress bar position
-// setTimeout(() => {
-//   animateProgressBar(currentPage, linkCount[currentPage - 1]);
-// }, 0);
+setTimeout(() => {
+  data ? animateProgressBar(currentPage, linkCount[currentPage - 1]) : null;
+}, 0);
 
 // Get the size of each link button
 // function getLinkWidth() {
@@ -20,7 +20,8 @@ let progress = document.getElementById('progress'),
 // Animate the progress bar
 function animateProgressBar(pos, link) {
   // Remove 'active' from all
-  linkCount.forEach((li) => li.classList.remove('active'));
+  const allLiElements = Array.from(document.querySelectorAll('li'));
+  allLiElements.forEach((li) => li.classList.remove('active'));
   link.classList.add('active');
   currentPage = pos;
   console.log(isMobile);
@@ -47,8 +48,6 @@ function buildLinks() {
       animateProgressBar(i + 1, liElement);
     });
 
-    console.log(liElement)
-
     navBar.appendChild(liElement);
     linkCount.push(liElement); // Store the element
   }
@@ -73,7 +72,7 @@ function getWindowWidth() {
 fetch('./data.json')
   .then((response) => response.json())
   .then((d) => {
-    data = d;
+    data = d.links;
     getWindowWidth();
     buildLinks();
   })
