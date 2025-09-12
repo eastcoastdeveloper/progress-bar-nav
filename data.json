@@ -1,0 +1,9 @@
+{
+  "links": [
+    { "page": "Home"     },
+    { "page": "About"    },
+    { "page": "Products" },
+    { "page": "Company"  },
+    { "page": "Contact"  }
+  ]
+}
