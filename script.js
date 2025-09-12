@@ -12,21 +12,21 @@ setTimeout(() => {
 }, 0);
 
 // Animate the progress bar
-function animateProgressBar(pos, link) {
+function animateProgressBar(num, liElement) {
   // Remove 'active' from all
   const allLiElements = Array.from(document.querySelectorAll('li'));
   allLiElements.forEach((li) => li.classList.remove('active'));
-  link.classList.add('active');
-  currentPage = pos;
+  liElement.classList.add('active');
+  currentPage = num;
 
   // Set new width and activate clicked
   progress.removeAttribute('style');
   if (!isMobile) {
-    progress.style.width = (navBar.offsetWidth / 5) * pos + 'px';
+    progress.style.width = (navBar.offsetWidth / 5) * num + 'px';
   }
 
   if (isMobile) {
-    progress.style.height = (navBar.offsetHeight / 5) * pos + 'px';
+    progress.style.height = (navBar.offsetHeight / 5) * num + 'px';
   }
 }
 
@@ -34,7 +34,7 @@ function animateProgressBar(pos, link) {
 function buildLinks() {
   for (let i = 0; i < data.length; i++) {
     const liElement = document.createElement('li');
-    liElement.innerHTML = `<a href="#">Link ${i + 1}</a>`;
+    liElement.innerHTML = `<a href="#">${data[i].page}</a>`;
 
     // Add click listener
     liElement.addEventListener('click', function () {
