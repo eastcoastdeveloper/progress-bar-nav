@@ -3,7 +3,6 @@ let progress = document.getElementById('progress'),
   timeOutFunctionId,
   isMobile = null,
   data = null,
-  // windowWidth = null,
   currentPage = 1, // start on the first link
   linkCount = []; // array to store the <li> elements
 
@@ -11,11 +10,6 @@ let progress = document.getElementById('progress'),
 setTimeout(() => {
   data ? animateProgressBar(currentPage, linkCount[currentPage - 1]) : null;
 }, 0);
-
-// Get the size of each link button
-// function getLinkWidth() {
-//   return navBar.offsetWidth / 5;
-// }
 
 // Animate the progress bar
 function animateProgressBar(pos, link) {
