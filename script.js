@@ -8,9 +8,9 @@ let progress = document.getElementById('progress'),
   linkCount = []; // array to store the <li> elements
 
 // Initialize progress bar position
-setTimeout(() => {
-  animateProgressBar(currentPage, linkCount[currentPage - 1]);
-}, 0);
+// setTimeout(() => {
+//   animateProgressBar(currentPage, linkCount[currentPage - 1]);
+// }, 0);
 
 // Get the size of each link button
 // function getLinkWidth() {
@@ -46,6 +46,8 @@ function buildLinks() {
     liElement.addEventListener('click', function () {
       animateProgressBar(i + 1, liElement);
     });
+
+    console.log(liElement)
 
     navBar.appendChild(liElement);
     linkCount.push(liElement); // Store the element
