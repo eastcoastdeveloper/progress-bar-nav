@@ -1,9 +1,9 @@
 {
   "links": [
-    { "page": "Home"     },
-    { "page": "About"    },
+    { "page": "Home" },
+    { "page": "About" },
     { "page": "Products" },
-    { "page": "Company"  },
-    { "page": "Contact"  }
+    { "page": "Company" },
+    { "page": "Contact" }
   ]
 }

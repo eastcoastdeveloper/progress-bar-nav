@@ -10,6 +10,8 @@ body {
 
 nav {
   padding: 0;
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 .container {
@@ -23,7 +25,7 @@ nav {
   overflow: auto;
   list-style: none;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 li {

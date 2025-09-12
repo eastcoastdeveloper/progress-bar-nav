@@ -18,7 +18,6 @@ function animateProgressBar(pos, link) {
   allLiElements.forEach((li) => li.classList.remove('active'));
   link.classList.add('active');
   currentPage = pos;
-  console.log(isMobile);
 
   // Set new width and activate clicked
   progress.removeAttribute('style');
