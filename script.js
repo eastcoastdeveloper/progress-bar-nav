@@ -22,11 +22,11 @@ function animateProgressBar(num, liElement) {
   // Set new width and activate clicked
   progress.removeAttribute('style');
   if (!isMobile) {
-    progress.style.width = (navBar.offsetWidth / 5) * num + 'px';
+    progress.style.width = (navBar.offsetWidth / data.length) * num + 'px';
   }
 
   if (isMobile) {
-    progress.style.height = (navBar.offsetHeight / 5) * num + 'px';
+    progress.style.height = (navBar.offsetHeight / data.length) * num + 'px';
   }
 }
 
