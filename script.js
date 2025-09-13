@@ -70,7 +70,7 @@ fetch('./data.json')
 
     getWindowWidth();
     buildLinks();
-    clearTimeout(timeOutFunctionId);
+    // clearTimeout(timeOutFunctionId);
   timeOutFunctionId = setTimeout(postResizeEvent, 200);
   })
   .catch((error) => console.error('Error:', error));
