@@ -6,11 +6,6 @@ let progress = document.getElementById('progress'),
   currentPage = 1, // start on the first link
   linkCount = []; // array to store the <li> elements
 
-// Initialize progress bar position
-setTimeout(() => {
-  data ? animateProgressBar(currentPage, linkCount[currentPage - 1]) : null;
-}, 0);
-
 // Animate the progress bar
 function animateProgressBar(num, liElement) {
   // Remove 'active' from all
@@ -28,6 +23,8 @@ function animateProgressBar(num, liElement) {
   if (isMobile) {
     progress.style.height = (navBar.offsetHeight / data.length) * num + 'px';
   }
+
+  console.log(isMobile);
 }
 
 // Build navigation links
@@ -68,5 +65,9 @@ fetch('./data.json')
     data = d.links;
     getWindowWidth();
     buildLinks();
+    // Initialize progress bar position
+    setTimeout(() => {
+      data ? animateProgressBar(currentPage, linkCount[currentPage - 1]) : null;
+    }, 0);
   })
   .catch((error) => console.error('Error:', error));
