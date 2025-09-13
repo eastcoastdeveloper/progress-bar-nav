@@ -63,11 +63,11 @@ fetch('./data.json')
   .then((response) => response.json())
   .then((d) => {
     data = d.links;
+        // Initialize progress bar position
+        setTimeout(() => {
+          data ? animateProgressBar(currentPage, linkCount[currentPage - 1]) : null;
+        }, 0);
     getWindowWidth();
     buildLinks();
-    // Initialize progress bar position
-    setTimeout(() => {
-      data ? animateProgressBar(currentPage, linkCount[currentPage - 1]) : null;
-    }, 0);
   })
   .catch((error) => console.error('Error:', error));
