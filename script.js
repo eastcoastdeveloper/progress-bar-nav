@@ -70,6 +70,7 @@ fetch('./data.json')
 
     getWindowWidth();
     buildLinks();
-    animateProgressBar(currentPage, linkCount[currentPage - 1]);
+    clearTimeout(timeOutFunctionId);
+  timeOutFunctionId = setTimeout(postResizeEvent, 200);
   })
   .catch((error) => console.error('Error:', error));
