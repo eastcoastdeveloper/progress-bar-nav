@@ -67,8 +67,7 @@ fetch('./data.json')
   .then((response) => response.json())
   .then((d) => {
     data = d.links;
-
-    postResizeEvent();
+    window.dispatchEvent(new Event('resize'));
     buildLinks();
   })
   .catch((error) => console.error('Error:', error));
