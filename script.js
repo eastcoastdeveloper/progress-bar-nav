@@ -68,7 +68,7 @@ fetch('./data.json')
   .then((d) => {
     data = d.links;
 
-    getWindowWidth();
+    postResizeEvent();
     buildLinks();
   })
   .catch((error) => console.error('Error:', error));
